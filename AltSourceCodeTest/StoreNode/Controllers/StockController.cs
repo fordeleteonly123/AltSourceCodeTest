@@ -8,7 +8,7 @@ using UseCase;
 
 namespace StoreNode.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class StockController : ControllerBase
     {
@@ -18,25 +18,30 @@ namespace StoreNode.Controllers
         StoreLogic _storeLogic = StoreLogic.GetSingletonStore();
 
         [HttpPost]
+        [ActionName("Clothing")]
         public void Clothing([FromBody] Clothing item)
         {
             _storeLogic.Register(item);
         }
 
         [HttpPost]
-        public void StockIn([FromBody] StockInRecord record)
+        [ActionName("In")]
+        public void In([FromBody] StockInRecord record)
         {
             _storeLogic.RecordClothingFromSupplier(record);
         }
 
         [HttpPost]
-        public void StockOut([FromBody] StockOutRecord record)
+        [ActionName("Out")]
+        public void Out([FromBody] StockOutRecord record)
         {
             _storeLogic.RecordSellingClothingToSupplier(record);
         }
 
         [HttpGet]
-        public ActionResult<int> CurrentStock(int id)
+        [ActionName("Current")]
+        [Route("{id}")]
+        public ActionResult<int> Current(int id)
         {
             return _storeLogic.GetCurrentStock(id);
         }

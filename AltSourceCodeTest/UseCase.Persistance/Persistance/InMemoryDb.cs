@@ -25,6 +25,7 @@ namespace UseCase.Persistance
 
             if (item == null)
             {
+                item = new CurrentStock(clothingId, count);
                 currentStocks.Add(item);
             }
             else
