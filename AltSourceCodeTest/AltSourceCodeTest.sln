@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreNode", "StoreNode\Stor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{E800988E-2D28-4F6C-931E-8C085E042F59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseCase.Persistance", "UseCase.Persistance\UseCase.Persistance.csproj", "{A765C571-C8CE-4AF5-87BA-9DA30DAAD0D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseCase", "UseCase.Persistance\UseCase.csproj", "{A765C571-C8CE-4AF5-87BA-9DA30DAAD0D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

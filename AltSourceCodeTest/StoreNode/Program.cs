@@ -7,6 +7,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using UseCase;
 
 namespace StoreNode
 {
@@ -14,6 +15,10 @@ namespace StoreNode
     {
         public static void Main(string[] args)
         {
+            InitObjectAndDependency.Setup();
+
+            SetupSampleData.Setup(StoreLogic.GetSingletonStore());
+
             CreateWebHostBuilder(args).Build().Run();
         }
 
